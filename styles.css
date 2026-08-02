@@ -1,14 +1,14 @@
 
 :root{
---forest:#053B36;
---forest2:#126B57;
---green:#239B72;
---gold:#E0B84C;
---cream:#FAFBF6;
---text:#172A25;
---muted:#60736B;
---line:rgba(18,107,87,.18);
---shadow:0 18px 60px rgba(5,59,54,.16)
+--forest:#063b32;
+--forest2:#0b5a46;
+--green:#16805d;
+--gold:#d8a83e;
+--cream:#f5f7f1;
+--text:#20312c;
+--muted:#64736d;
+--line:rgba(22,128,93,.16);
+--shadow:0 18px 60px rgba(6,59,50,.18)
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Computer Modern Sans", "CMU Sans Serif", "Latin Modern Sans", Inter, system-ui, sans-serif;color:var(--text);background:var(--cream);line-height:1.65}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 h1,h2,h3{font-family:"Computer Modern Sans", "CMU Sans Serif", "Latin Modern Sans", Inter, system-ui, sans-serif;line-height:1.05;margin:0;color:var(--forest)}h1{font-size:clamp(3rem,6.5vw,6.8rem);letter-spacing:-.04em}h2{font-size:clamp(2.2rem,4vw,4.2rem);letter-spacing:-.03em}h3{font-size:1.8rem}.container{width:min(1240px,calc(100% - 2rem));margin:auto}.section{padding:clamp(4rem,7vw,7rem) 0}.muted{background:#fff}.eyebrow{font-size:.78rem!important;text-transform:uppercase;letter-spacing:.18em;font-weight:900;color:var(--gold);margin:0 0 1rem}.section-head{text-align:center;max-width:900px;margin-bottom:3rem}.section-head p{color:var(--muted)}

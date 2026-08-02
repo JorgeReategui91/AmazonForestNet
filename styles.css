@@ -1,5 +1,15 @@
 
-:root{--forest:#08261f;--forest2:#103b31;--green:#1f5a44;--gold:#c7a85a;--cream:#f7f8f2;--text:#1f2f2a;--muted:#66736d;--line:rgba(15,59,48,.14);--shadow:0 18px 60px rgba(8,38,31,.16)}
+:root{
+--forest:#053B36;
+--forest2:#126B57;
+--green:#239B72;
+--gold:#E0B84C;
+--cream:#FAFBF6;
+--text:#172A25;
+--muted:#60736B;
+--line:rgba(18,107,87,.18);
+--shadow:0 18px 60px rgba(5,59,54,.16)
+}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Computer Modern Sans", "CMU Sans Serif", "Latin Modern Sans", Inter, system-ui, sans-serif;color:var(--text);background:var(--cream);line-height:1.65}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 h1,h2,h3{font-family:"Computer Modern Sans", "CMU Sans Serif", "Latin Modern Sans", Inter, system-ui, sans-serif;line-height:1.05;margin:0;color:var(--forest)}h1{font-size:clamp(3rem,6.5vw,6.8rem);letter-spacing:-.04em}h2{font-size:clamp(2.2rem,4vw,4.2rem);letter-spacing:-.03em}h3{font-size:1.8rem}.container{width:min(1240px,calc(100% - 2rem));margin:auto}.section{padding:clamp(4rem,7vw,7rem) 0}.muted{background:#fff}.eyebrow{font-size:.78rem!important;text-transform:uppercase;letter-spacing:.18em;font-weight:900;color:var(--gold);margin:0 0 1rem}.section-head{text-align:center;max-width:900px;margin-bottom:3rem}.section-head p{color:var(--muted)}
 .site-header{position:fixed;z-index:30;inset:0 0 auto;background:rgba(8,38,31,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.12)}.navbar{min-height:76px;display:flex;align-items:center;gap:1rem;padding:0 clamp(1rem,3vw,3rem);color:white}.brand{display:flex;align-items:center;gap:.75rem;margin-right:auto}.brand-mark{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),#fff0a2);color:var(--forest);font-weight:900}.brand strong{display:block}.brand small{display:block;font-size:.72rem;color:rgba(255,255,255,.7);margin-top:-.1rem}.nav-links{display:flex;align-items:center;gap:1rem;font-size:.76rem;font-weight:900;letter-spacing:.08em}.nav-links a{opacity:.84}.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--gold)}.nav-toggle{display:none;background:none;border:0}.nav-toggle span{display:block;width:26px;height:2px;background:white;margin:5px}

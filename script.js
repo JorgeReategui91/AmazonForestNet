@@ -21,17 +21,27 @@ function zoomCardImage(button, amount) {
 
   zoom = zoom + amount;
 
-  // Limite mínimo
-  if (zoom < 1) {
-    zoom = 1;
-  }
-
-  // Limite máximo
-  if (zoom > 4) {
-    zoom = 4;
-  }
+  if (zoom < 1) zoom = 1;
+  if (zoom > 4) zoom = 4;
 
   image.dataset.zoom = zoom;
 
-  image.style.transform = "scale(" + zoom + ")";
+  if (zoom === 1) {
+    image.dataset.x = 0;
+    image.dataset.y = 0;
+  }
+
+  updateImageTransform(image);
+}
+
+
+function updateImageTransform(image) {
+
+  const zoom = parseFloat(image.dataset.zoom || "1");
+
+  const x = parseFloat(image.dataset.x || "0");
+  const y = parseFloat(image.dataset.y || "0");
+
+  image.style.transform =
+    `translate(${x}px, ${y}px) scale(${zoom})`;
 }

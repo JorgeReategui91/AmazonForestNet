@@ -60,3 +60,112 @@ form{display:grid;gap:.8rem}input,textarea{width:100%;padding:1rem;border:1px so
   color: #003d99;
   text-decoration: underline;
 }
+
+
+
+
+
+.expandable-image {
+  width: 100%;
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.expandable-image:hover {
+  transform: scale(1.02);
+}
+
+
+/* VISOR */
+
+.image-viewer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: rgba(0, 0, 0, 0.90);
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.image-viewer.active {
+  display: flex;
+}
+
+
+/* IMAGEM AMPLIADA */
+
+#viewerImage {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+
+  transition: transform 0.25s ease;
+
+  cursor: zoom-out;
+}
+
+
+/* BOTÃO FECHAR */
+
+.viewer-close {
+  position: absolute;
+
+  top: 20px;
+  right: 30px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.9);
+
+  font-size: 32px;
+  line-height: 40px;
+
+  cursor: pointer;
+
+  z-index: 10001;
+}
+
+
+/* CONTROLES DE ZOOM */
+
+.zoom-controls {
+  position: absolute;
+
+  bottom: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 10px;
+
+  z-index: 10001;
+}
+
+.zoom-controls button {
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.9);
+
+  font-size: 28px;
+
+  cursor: pointer;
+}
+
+.zoom-controls button:hover,
+.viewer-close:hover {
+  background: white;
+}

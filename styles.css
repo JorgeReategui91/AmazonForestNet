@@ -64,64 +64,22 @@ form{display:grid;gap:.8rem}input,textarea{width:100%;padding:1rem;border:1px so
 
 
 
-
-
-
-.image-container {
-  position: relative;
-  overflow: hidden;
-}
-
 .image-container img {
   width: 100%;
+  height: 300px;
+  object-fit: contain;
   display: block;
-  cursor: zoom-in;
+
+  cursor: grab;
+
   transform-origin: center center;
-  transition: transform 0.25s ease;
+  transition: transform 0.15s ease;
+
+  user-select: none;
 }
 
-
-/* BOTÕES DE ZOOM */
-
-.zoom-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 42px;
-  height: 42px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.92);
-  color: #222;
-
-  font-size: 28px;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  z-index: 20;
-
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+.image-container img:active {
+  cursor: grabbing;
 }
 
-.zoom-btn:hover {
-  transform: translateY(-50%) scale(1.1);
-}
-
-
-/* MENOS À ESQUERDA */
-
-.zoom-minus {
-  left: 12px;
-}
-
-
-/* MAIS À DIREITA */
-
-.zoom-plus {
-  right: 12px;
-}
 

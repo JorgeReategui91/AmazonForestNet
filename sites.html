@@ -86,15 +86,16 @@
     <article class="info-card">
 
       <img src="assets/images/Brasil-Equador1.png"
-           alt="Ecuadorian Amazon">
+           alt="Pan-Amazonian monitoring sites"
+           class="expandable-image">
 
-      <h3>Ecuadorian Amazon</h3>
+      <h3>Pan-Amazonian Region</h3>
 
       <p>
         Permanent monitoring sites established in managed tropical 
         forests across the Pan-Amazonian region, supporting forest inventories, 
         botanical identification, capacity building, and long-term ecological 
-        monitoring through international cooperation..
+        monitoring through international cooperation.
       </p>
 
     </article>
@@ -102,7 +103,8 @@
     <article class="info-card">
 
       <img src="assets/images/Figure_1.png"
-           alt="Brazilian Amazon">
+           alt="Brazilian Amazon"
+           class="expandable-image">
 
       <h3>Brazilian Amazon</h3>
 
@@ -114,6 +116,87 @@
       </p>
 
     </article>
+
+  </div>
+
+</section>
+
+<!-- Image viewer -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img id="expandedImage" src="" alt="">
+</div>
+2. Depois coloque este CSS
+
+No seu style.css:
+
+.expandable-image {
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.expandable-image:hover {
+  transform: scale(1.02);
+}
+
+/* Modal */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.image-modal img {
+  max-width: 95%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+}
+3. E coloque este JavaScript antes do </body>
+<script>
+  const images = document.querySelectorAll('.expandable-image');
+  const modal = document.getElementById('imageModal');
+  const expandedImage = document.getElementById('expandedImage');
+  const closeModal = document.querySelector('.close-modal');
+
+  images.forEach(image => {
+    image.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      expandedImage.src = image.src;
+      expandedImage.alt = image.alt;
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+
+  
+</article>
 
   </div>
 

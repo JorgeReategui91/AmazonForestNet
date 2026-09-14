@@ -64,6 +64,16 @@ form{display:grid;gap:.8rem}input,textarea{width:100%;padding:1rem;border:1px so
 
 
 
+/* ==============================
+   IMAGENS DOS CARDS
+   ============================== */
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
 .image-container img {
   width: 100%;
   height: 300px;
@@ -71,15 +81,163 @@ form{display:grid;gap:.8rem}input,textarea{width:100%;padding:1rem;border:1px so
   display: block;
 
   cursor: grab;
+  user-select: none;
 
   transform-origin: center center;
   transition: transform 0.15s ease;
+}
+
+.image-container img.dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+
+/* ==============================
+   BOTÕES DE ZOOM
+   ============================== */
+
+.zoom-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.92);
+  color: #222;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+
+/* − fica na esquerda */
+
+.zoom-minus {
+  left: 12px;
+}
+
+
+/* + fica na direita */
+
+.zoom-plus {
+  right: 12px;
+}
+
+
+/* ==============================
+   VISOR AMPLIADO
+   ============================== */
+
+.image-fullscreen {
+  position: fixed;
+  inset: 0;
+
+  z-index: 99999;
+
+  background: rgba(0, 0, 0, 0.92);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.image-fullscreen img {
+  max-width: 90%;
+  max-height: 90%;
+
+  object-fit: contain;
+
+  cursor: grab;
 
   user-select: none;
+
+  transition: transform 0.15s ease;
 }
 
-.image-container img:active {
+.image-fullscreen img.dragging {
   cursor: grabbing;
+  transition: none;
 }
 
 
+/* ==============================
+   BOTÃO FECHAR
+   ============================== */
+
+.close-image {
+  position: absolute;
+
+  top: 20px;
+  right: 25px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: white;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  z-index: 100000;
+}
+
+
+/* ==============================
+   BOTÕES + E − NO VISOR
+   ============================== */
+
+.fullscreen-plus,
+.fullscreen-minus {
+  position: absolute;
+
+  bottom: 25px;
+
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: white;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  z-index: 100000;
+}
+
+.fullscreen-plus {
+  left: calc(50% + 5px);
+}
+
+.fullscreen-minus {
+  left: calc(50% - 55px);
+}

@@ -65,58 +65,40 @@ form{display:grid;gap:.8rem}input,textarea{width:100%;padding:1rem;border:1px so
 
 
 
-.expandable-image {
-  width: 100%;
-  cursor: zoom-in;
-  transition: transform 0.2s ease;
-}
-
-.expandable-image:hover {
-  transform: scale(1.02);
-}
 
 
-/* VISOR */
-
-.image-viewer {
-  display: none;
+.image-fullscreen {
   position: fixed;
   inset: 0;
-  z-index: 9999;
 
-  background: rgba(0, 0, 0, 0.90);
+  background: rgba(0,0,0,0.92);
 
-  justify-content: center;
+  z-index: 99999;
+
+  display: flex;
   align-items: center;
+  justify-content: center;
 
   overflow: hidden;
 }
 
-.image-viewer.active {
-  display: flex;
-}
-
-
-/* IMAGEM AMPLIADA */
-
-#viewerImage {
+.image-fullscreen img {
   max-width: 90%;
   max-height: 90%;
+
   object-fit: contain;
 
   transition: transform 0.25s ease;
-
-  cursor: zoom-out;
 }
 
 
-/* BOTÃO FECHAR */
+/* Fechar */
 
-.viewer-close {
+.fullscreen-close {
   position: absolute;
 
   top: 20px;
-  right: 30px;
+  right: 25px;
 
   width: 45px;
   height: 45px;
@@ -124,20 +106,15 @@ form{display:grid;gap:.8rem}input,textarea{width:100%;padding:1rem;border:1px so
   border: none;
   border-radius: 50%;
 
-  background: rgba(255,255,255,0.9);
-
   font-size: 32px;
-  line-height: 40px;
 
   cursor: pointer;
-
-  z-index: 10001;
 }
 
 
-/* CONTROLES DE ZOOM */
+/* + e - */
 
-.zoom-controls {
+.fullscreen-controls {
   position: absolute;
 
   bottom: 25px;
@@ -148,24 +125,18 @@ form{display:grid;gap:.8rem}input,textarea{width:100%;padding:1rem;border:1px so
   display: flex;
   gap: 10px;
 
-  z-index: 10001;
+  z-index: 100000;
 }
 
-.zoom-controls button {
+.fullscreen-controls button {
   width: 50px;
   height: 50px;
 
   border: none;
   border-radius: 50%;
 
-  background: rgba(255,255,255,0.9);
-
   font-size: 28px;
+  font-weight: bold;
 
   cursor: pointer;
-}
-
-.zoom-controls button:hover,
-.viewer-close:hover {
-  background: white;
 }

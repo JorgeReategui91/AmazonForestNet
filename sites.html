@@ -81,7 +81,6 @@
 
 <div class="container two-col">
 
-  <!-- PAN-AMAZONIAN REGION -->
   <article class="info-card">
 
     <div class="image-container">
@@ -90,14 +89,13 @@
            alt="Pan-Amazonian Region"
            onclick="openImage(this)">
 
-      <!-- BOTÕES -->
       <button class="zoom-btn zoom-minus"
-              onclick="zoomCardImage(this, -0.2)">
+              onclick="event.stopPropagation(); zoomCardImage(this, -0.2)">
         −
       </button>
 
       <button class="zoom-btn zoom-plus"
-              onclick="zoomCardImage(this, 0.2)">
+              onclick="event.stopPropagation(); zoomCardImage(this, 0.2)">
         +
       </button>
 
@@ -115,7 +113,6 @@
   </article>
 
 
-  <!-- BRAZILIAN AMAZON -->
   <article class="info-card">
 
     <div class="image-container">
@@ -124,14 +121,13 @@
            alt="Brazilian Amazon"
            onclick="openImage(this)">
 
-      <!-- BOTÕES -->
       <button class="zoom-btn zoom-minus"
-              onclick="zoomCardImage(this, -0.2)">
+              onclick="event.stopPropagation(); zoomCardImage(this, -0.2)">
         −
       </button>
 
       <button class="zoom-btn zoom-plus"
-              onclick="zoomCardImage(this, 0.2)">
+              onclick="event.stopPropagation(); zoomCardImage(this, 0.2)">
         +
       </button>
 
@@ -146,28 +142,7 @@
       network.
     </p>
 
-  </article>
-
-</div>
-
-
-</section>
-
-<!-- VISOR DA IMAGEM -->
-<div id="imageViewer" class="image-viewer">
-
-  <button class="viewer-close" onclick="closeImage()">×</button>
-
-  <div class="zoom-controls">
-    <button onclick="zoomImage(1.2)">+</button>
-    <button onclick="zoomImage(0.8)">−</button>
-  </div>
-
-  <img id="viewerImage" src="" alt="">
-
-</div>
-
-  
+   
 </article>
 
   </div>
